@@ -27,14 +27,17 @@ month=int(input("월을 입력하세요 : "))
 resultY=""
 resultM=0
 
+if ((year % 4 == 0 and year % 100 != 0) or year % 400 == 0) :
+    resultY="윤년"
+else :
+    resultY="평년"
+    
 if (month == 4 or month == 6 or month == 9 or month == 11) :
     resultM=30
 elif (month == 2 ) :
-    if ((year % 4 == 0 and year % 100 != 0) or year % 400 == 0) :
-        resultY="윤년"
+    if (resultY == "윤년") :
         resultM=29
     else :
-        resultY="평년"
         resultM=28
 else :
     resultM=31
