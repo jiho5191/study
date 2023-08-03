@@ -27,25 +27,16 @@ month=int(input("월을 입력하세요 : "))
 resultY=""
 resultM=0
 
-if ((year % 4 == 0 and year % 100 != 0) or year % 400 == 0) :
-    result="윤년"
-    if (month == 2) :
+if (month == 4 or month == 6 or month == 9 or month == 11) :
+    resultM=30
+elif (month == 2 ) :
+    if ((year % 4 == 0 and year % 100 != 0) or year % 400 == 0) :
+        resultY="윤년"
         resultM=29
-    elif (month == 4 or month == 6 or month == 9 or month == 11) :
-        resultM=30
-    
     else :
-        resultM=31
-        
-else :
-    result="평년"
-    if (month == 2) :
+        resultY="평년"
         resultM=28
-    elif (month == 4 or month == 6 or month == 9 or month == 11) :
-        resultM=30
-    else :
-        resultM=31
+else :
+    resultM=31
 
 print(str(year) + "년 " + str(month) + "월은 " + resultY + "이고 " + str(resultM) + "일까지 있습니다.")
-
-    
