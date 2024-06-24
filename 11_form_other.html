@@ -1,0 +1,63 @@
+<!-- 그 외 form 요소 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11_그 외 form 요소</title>
+  </head>
+  <body>
+    <label for="">살고 있는 지역은?</label>
+    <!-- 선택의 폭이 많을 때는 select 사용하고 적으면 radio 사용 권장 -->
+    <select name="" id="">
+      <option value="02">서울</option>
+      <option value="051">부산</option>
+      <option value="064">제주</option>
+    </select>
+    <br />
+
+    <label for="">당신의 성별은?</label>
+    <div>
+      <input type="radio" name="rdo_gender" id="male" />
+      <label for="male">남자</label>
+      <input type="radio" name="rdo_gender" id="female" />
+      <label for="female">여자</label>
+    </div>
+
+    <!-- 텍스트를 여러줄 입력 받기 위해서는 textarea 사용 -->
+    <div>
+      <textarea name="" id="" style="width: 100%" rows="10"></textarea>
+    </div>
+
+    <!-- 연관된 요소를 하나로 묶을 때 fieldset 사용 -->
+    <div>
+      <fieldset>
+        <legend>개인정보</legend>
+        <div>
+          <label for="name">이름</label>
+          <input type="text" name="" id="name" />
+        </div>
+        <div>
+          <label for="tel">연락처</label>
+          <input type="tel" name="" id="tel" />
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- datalist는 문자를 입력 받을 수 있는 input 개념과 select 기능이 복합적으로 들어감 -->
+    <div>
+      <input list="browsers" id="browsers1" />
+      <datalist id="browsers">
+        <option value="Internet Explorer">Internet Explorer</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Chrome">Chrome</option>
+        <option value="Opera">Opera</option>
+        <option value="Safari">Safari</option>
+      </datalist>
+    </div>
+    <!-- id만 다르다면 datalist를 재사용 가능 -->
+    <div>
+      <input list="browsers" id="browsers2" />
+    </div>
+  </body>
+</html>
